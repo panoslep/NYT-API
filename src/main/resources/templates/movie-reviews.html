@@ -39,6 +39,15 @@
 
 
 <body style="background-image: url('images/NYCbackground.jpg');">
+
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Search with Title</span>
+  <form action="#" method="get" th:action="@{/movie-reviews}" class="col">
+    <input name="q" type="text" class="form-control" placeholder="Search" aria-label="q" aria-describedby="addon-wrapping">
+  </form>
+</div>
+
+
 <div class="container">
 
   <div class="row">
@@ -64,7 +73,6 @@
           <a class="btn btn-danger" th:href="${movie.link.url}">Read More</a>
         </div>
       </div>
-      <!--                </div>-->
 
     </div>
   </div>
