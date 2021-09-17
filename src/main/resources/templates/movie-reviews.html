@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--  <title> NYTimes Movie Reviews </title>-->
+<!--  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<!--  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}"/> &lt;!&ndash;imports bootstrap stylesheet&ndash;&gt;-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<ul th:each="movie : ${movieList}">-->
+<!--  <div class="card" style="width: 25rem;">-->
+<!--    <img th:src="${movie.multimedia.src}" class="card-img-top" alt="Image not found">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title"  th:text="${movie.display_title}"> </h5>-->
+<!--      <p th:text="${movie.summary_short}" />-->
+<!--      <a href="#" class="btn btn-danger">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ul>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title> NYTimes Get Most Popular </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}"/>
+  <!--imports bootstrap stylesheet-->
+  <!--comment this out before deployment -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+
+<body style="background-image: url('images/NYCbackground.jpg');">
+<div class="container">
+
+  <div class="row">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">New York Times Movie Reviews</h1>
+        <p class="lead">Search for reviews on movie titles by the NY Times.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center"> <!-- align-item-center-->
+    <div class="card border border-dark p-0 mb-2 mt-2 ms-2 me-2" style="width: default;" th:each="movie, iStat : ${movieList}">
+
+      <!--                <div class="row">-->
+      <img alt="Image not found" class="card-img-top" th:src="${movie.multimedia.src}">
+
+      <div class="card-body">
+
+        <h5 class="card-title" th:text="${movie.display_title}"></h5>
+        <p th:text="${movie.summary_short}"/>
+        <div class="col text-center">
+          <a class="btn btn-danger" th:href="${movie.link.url}">Read More</a>
+        </div>
+      </div>
+      <!--                </div>-->
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

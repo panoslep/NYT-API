@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title> NYTimes Get Most Popular </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}"/>
+    <!--imports bootstrap stylesheet-->
+    <!--comment this out before deployment -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css"/>
+</head>
+
+
+<body style="background-image: url('images/NYCbackground.jpg');">
+    <div class="container">
+
+        <div class="row">
+            <div class="jumbotron jumbotron-fluid">
+               <div class="container">
+                <h1 class="display-4">New York Times News</h1>
+                <p class="lead">The most popular news articles on NY Times.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="row justify-content-center"> <!-- align-item-center-->
+        <div class="card border border-dark p-0 mb-2 mt-2 ms-2 me-2" style="width: default;" th:each="article, iStat : ${articleList}">
+
+            <!--                <div class="row">-->
+            <img th:src="${article.media[0].metaMedia[2].url}" class="card-img-top" alt="Image not found">
+
+            <div class="card-body">
+
+                <h5 class="card-title" th:text="${article.title}"></h5>
+                <p th:text="${article.summary}"/>
+                <div class="col text-center">
+                    <a th:href="${article.url}" class="btn btn-danger">Read More</a>
+                </div>
+            </div>
+            <!--                </div>-->
+
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
