@@ -3,7 +3,7 @@ package com.panoslepipas.spring.project.controllers;
 import com.panoslepipas.spring.project.models.Article;
 import com.panoslepipas.spring.project.models.Movie;
 import com.panoslepipas.spring.project.services.ApiService;
-import org.dom4j.rule.Mode;
+//import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
